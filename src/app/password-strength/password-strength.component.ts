@@ -21,12 +21,12 @@ export class PasswordStrengthComponent {
 
   const regex = /[$-/:-?{-~!"^_@`\[\]]/g;
    
-  const lowerLetters = /[a-z]+/.test(p);
-  const upperLetters = /[A-Z]+/.test(p);
+  // const lowerLetters = /[a-z]+/.test(p);
+  const letters = /[A-z]+/.test(p);
   const numbers = /[0-9]+/.test(p);
   const symbols = regex.test(p);
 
-  const flags = [lowerLetters, upperLetters, numbers, symbols];
+  const flags = [letters, numbers, symbols];
 
   let passedMatches = 0;
   for (const flag of flags) {
